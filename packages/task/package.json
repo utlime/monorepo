@@ -1,0 +1,14 @@
+{
+  "name": "@utlime/task",
+  "version": "0.1.0",
+  "description": "Task interface",
+  "main": "dist/lib/index.js",
+  "keywords": [
+    "task"
+  ],
+  "author": "Alex Vysotsky <utlime@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --module commonjs"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@utlime/monorepo",
+  "version": "0.1.0",
+  "description": "Pet project around monorepo",
+  "keywords": [
+    "monorepo",
+    "todo"
+  ],
+  "author": "Alex Vysotsky <utlime@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "install": "lerna bootstrap",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^3.4.0",
+    "typescript": "^3.0.3"
+  }
+}
