@@ -8,6 +8,10 @@
   ],
   "author": "Alex Vysotsky <utlime@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utlime/monorepo"
+  },
   "scripts": {
     "commit": "git-cz",
     "install": "lerna bootstrap",

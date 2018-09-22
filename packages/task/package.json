@@ -11,6 +11,10 @@
     "task"
   ],
   "author": "Alex Vysotsky <utlime@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utlime/monorepo/tree/master/packages/task"
+  },
   "license": "MIT",
   "scripts": {
     "build": "tsc --module commonjs"
