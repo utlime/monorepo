@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/utlime/monorepo/tree/master/packages/task/compare/@utlime/task@0.1.5...@utlime/task@0.1.6) (2018-09-22)
+
+**Note:** Version bump only for package @utlime/task
+
+
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/utlime/monorepo/tree/master/packages/task/compare/@utlime/task@0.1.4...@utlime/task@0.1.5) (2018-09-22)
 
