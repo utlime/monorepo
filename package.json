@@ -11,7 +11,8 @@
   "scripts": {
     "commit": "git-cz",
     "install": "lerna bootstrap",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "publish": "lerna publish"
   },
   "devDependencies": {
     "commitizen": "^2.10.1",
