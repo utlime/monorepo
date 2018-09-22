@@ -18,7 +18,14 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --module commonjs",
+    "test": "jest -c jest.json",
     "prepare": "npm run build"
   },
-  "gitHead": "2efdd07b3a0e8bf1fd08bf956f62851896c1cc77"
+  "gitHead": "2efdd07b3a0e8bf1fd08bf956f62851896c1cc77",
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.1",
+    "typescript": "^3.0.3"
+  }
 }

@@ -16,13 +16,13 @@
     "commit": "git-cz",
     "install": "lerna bootstrap",
     "build": "lerna run build",
+    "test": "lerna run test",
     "publish": "lerna publish"
   },
   "devDependencies": {
     "commitizen": "^2.10.1",
     "cz-lerna-changelog": "^2.0.0",
-    "lerna": "^3.4.0",
-    "typescript": "^3.0.3"
+    "lerna": "^3.4.0"
   },
   "config": {
     "commitizen": {
