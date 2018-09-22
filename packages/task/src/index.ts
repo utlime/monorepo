@@ -26,7 +26,7 @@ export function isDone(done: boolean): (task: Task) => boolean {
 }
 
 /**
- * Create new task with option
+ * Create new task with options
  */
 export function update(
   options: {
