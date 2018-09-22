@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Task interface",
   "main": "dist/lib/index.js",
+  "typings": "dist/types/index.d.ts",
   "keywords": [
     "task"
   ],
