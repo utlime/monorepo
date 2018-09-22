@@ -17,7 +17,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsc --module commonjs"
+    "build": "tsc --module commonjs",
+    "prepublish": "npm run build"
   },
   "gitHead": "2efdd07b3a0e8bf1fd08bf956f62851896c1cc77"
 }
