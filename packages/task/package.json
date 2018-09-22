@@ -1,6 +1,7 @@
 {
   "name": "@utlime/task",
   "version": "0.1.1",
+  "private": false,
   "description": "Task interface",
   "main": "dist/lib/index.js",
   "typings": "dist/types/index.d.ts",
@@ -11,5 +12,6 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --module commonjs"
-  }
+  },
+  "gitHead": "dc4255c8e262b14e1419cff26cfa46079e38c580"
 }
