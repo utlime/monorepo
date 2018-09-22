@@ -1,7 +1,9 @@
 {
   "name": "@utlime/task",
   "version": "0.1.2",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Task interface",
   "main": "dist/lib/index.js",
   "typings": "dist/types/index.d.ts",
@@ -13,5 +15,5 @@
   "scripts": {
     "build": "tsc --module commonjs"
   },
-  "gitHead": "dc4255c8e262b14e1419cff26cfa46079e38c580"
+  "gitHead": "2efdd07b3a0e8bf1fd08bf956f62851896c1cc77"
 }
