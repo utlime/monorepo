@@ -1,6 +1,6 @@
 {
   "name": "@utlime/task",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Task interface",
   "main": "dist/lib/index.js",
   "typings": "dist/types/index.d.ts",
