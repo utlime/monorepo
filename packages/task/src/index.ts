@@ -1,19 +1,24 @@
+export enum Status {
+  Done = 'done',
+  Unfinished = 'unfinished',
+}
+
 /**
  * Task with name and status
  */
 export interface Task {
   task: string;
-  done: boolean;
+  status: Status;
 }
 
 /**
  * Create new task with default options
  */
 export function defaults(
-  options: { done?: boolean } = { done: false }
-): (task: { task: string; done?: boolean }) => Task {
+  options: { status?: Status } = { status: Status.Unfinished }
+): (task: { task: string; status?: Status }) => Task {
   return task => ({
-    done: task.done || options.done || false,
+    status: task.status || options.status || Status.Unfinished,
     task: task.task,
   });
 }
@@ -21,8 +26,8 @@ export function defaults(
 /**
  * Return boolean value if task status is equal to done
  */
-export function isDone(done: boolean): (task: Task) => boolean {
-  return task => task.done === done;
+export function isStatus(status: Status): (task: Task) => boolean {
+  return task => task.status === status;
 }
 
 /**
@@ -31,11 +36,11 @@ export function isDone(done: boolean): (task: Task) => boolean {
 export function update(
   options: {
     task?: string;
-    done?: boolean;
+    status?: Status;
   } = {}
 ): (task: Task) => Task {
   return task => ({
     task: options.task || task.task,
-    done: options.done || task.done,
+    status: options.status || task.status,
   });
 }

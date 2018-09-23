@@ -1,22 +1,22 @@
-import { defaults } from '../src/index';
+import { defaults, Status } from '../src/index';
 
 describe('todoDefaults', () => {
   it('should be created with task only', () => {
     expect(defaults()({ task: 'todo' })).toMatchObject({
       task: 'todo',
-      done: false,
+      status: Status.Unfinished,
     });
   });
 
   it('should be created with done true', () => {
-    expect(defaults({ done: true })({ task: 'todo' })).toMatchObject({
+    expect(defaults({ status: Status.Done })({ task: 'todo' })).toMatchObject({
       task: 'todo',
-      done: true,
+      status: Status.Done,
     });
   });
 
   it('should be new object', () => {
-    const todo = { task: 'todo', done: false };
+    const todo = { task: 'todo', status: Status.Done };
 
     expect(defaults({})(todo)).not.toBe(todo);
   });
