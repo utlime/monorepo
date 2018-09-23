@@ -1,5 +1,7 @@
 src
 tests
+coverage
+.rpt2_cache
 tsconfig.json
 rollup.config.ts
 jest.json
