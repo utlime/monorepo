@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/utlime/monorepo/tree/master/packages/task/compare/@utlime/task@0.2.2...@utlime/task@0.3.0) (2018-09-23)
+
+
+### Features
+
+* **interface:** add task status interface and replace property done to use new interface ([466f322](https://github.com/utlime/monorepo/tree/master/packages/task/commit/466f322))
+
+
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/utlime/monorepo/tree/master/packages/task/compare/@utlime/task@0.2.1...@utlime/task@0.2.2) (2018-09-23)
 
