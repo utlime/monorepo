@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/utlime/monorepo/tree/master/packages/task/compare/@utlime/task@0.1.8...@utlime/task@0.2.0) (2018-09-23)
+
+
+### Features
+
+* **build:** add supporting of es2015 modules ([e91ee0d](https://github.com/utlime/monorepo/tree/master/packages/task/commit/e91ee0d))
+
+
+
+
+
 <a name="0.1.8"></a>
 ## [0.1.8](https://github.com/utlime/monorepo/tree/master/packages/task/compare/@utlime/task@0.1.7...@utlime/task@0.1.8) (2018-09-22)
 
