@@ -2,7 +2,7 @@
  * Object which has weight
  */
 export interface Weightable {
-  readonly weight: number;
+  weight: number;
 }
 
 /**
