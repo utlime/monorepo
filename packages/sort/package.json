@@ -1,0 +1,57 @@
+{
+  "name": "@utlime/sort",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Sort interface",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es5.js",
+  "typings": "dist/types/index.d.ts",
+  "keywords": [
+    "tag"
+  ],
+  "author": "Alex Vysotsky <utlime@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utlime/monorepo/tree/master/packages/sort"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "test": "jest -c jest.json",
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prettier": "prettier --write {src,tests}/**/*.ts",
+    "precommit": "lint-staged",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/lodash": "^4.14.116",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "lodash": "^4.17.11",
+    "prettier": "^1.14.3",
+    "rollup": "^0.66.2",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.17.0",
+    "ts-jest": "^23.10.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.0.3"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "{src,tests}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
