@@ -1,24 +1,17 @@
-export enum Status {
-  Done = 'done',
-  Unfinished = 'unfinished',
-}
+import { Status } from './Status';
+import { Task } from './Task';
 
-/**
- * Task with name and status
- */
-export interface Task {
-  task: string;
-  status: Status;
-}
+export { Status } from './Status';
+export { Task } from './Task';
 
 /**
  * Create new task with default options
  */
 export function defaults(
-  options: { status?: Status } = { status: Status.Unfinished }
+  options: { status?: Status } = { status: Status.NotStarted }
 ): (task: { task: string; status?: Status }) => Task {
   return task => ({
-    status: task.status || options.status || Status.Unfinished,
+    status: task.status || options.status || Status.NotStarted,
     task: task.task,
   });
 }
