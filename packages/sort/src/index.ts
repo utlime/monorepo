@@ -1,14 +1,14 @@
 /**
- * Object which has weight
+ * Object which has order
  */
-export interface Weightable {
-  weight: number;
+export interface Sortable {
+  order: number;
 }
 
 /**
- * Order
+ * SortOrder
  */
-export enum Order {
+export enum SortOrder {
   ASC,
   DESC,
 }
@@ -16,14 +16,14 @@ export enum Order {
 /**
  * Comparator
  */
-export function comparator(order: Order = Order.ASC): (a: Weightable, b: Weightable) => number {
-  return order === Order.DESC ? (a, b) => b.weight - a.weight : (a, b) => a.weight - b.weight;
+export function comparator(order: SortOrder = SortOrder.ASC): (a: Sortable, b: Sortable) => number {
+  return order === SortOrder.DESC ? (a, b) => b.order - a.order : (a, b) => a.order - b.order;
 }
 
 /**
  * Sort given collection
  */
-export function sort(order: Order = Order.ASC): <T extends Weightable>(items: T[]) => T[] {
+export function sort(order: SortOrder = SortOrder.ASC): <T extends Sortable>(items: T[]) => T[] {
   const cmp = comparator(order);
 
   return items => items.sort(cmp);
@@ -32,16 +32,16 @@ export function sort(order: Order = Order.ASC): <T extends Weightable>(items: T[
 /**
  * Return first item after sorting
  */
-export function first(order: Order = Order.ASC): <T extends Weightable>(items: T[]) => T | null {
+export function first(order: SortOrder = SortOrder.ASC): <T extends Sortable>(items: T[]) => T | null {
   const cmp = comparator(order);
 
-  return <T extends Weightable>(items: T[]) =>
+  return <T extends Sortable>(items: T[]) =>
     items.reduce((prev: T | null, cur: T) => (prev === null || cmp(prev, cur) > 0 ? cur : prev), null);
 }
 
 /**
- * Return weight of collection
+ * Return order of collection
  */
-export function total(items: Weightable[]): number {
-  return items.reduce((total, cur) => total + cur.weight, 0);
+export function total(items: Sortable[]): number {
+  return items.reduce((total, cur) => total + cur.order, 0);
 }

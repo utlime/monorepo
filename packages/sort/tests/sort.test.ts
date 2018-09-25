@@ -1,4 +1,4 @@
-import { Order, sort } from '../src';
+import { SortOrder, sort } from '../src';
 import { collection } from './helpers';
 
 describe('sort', () => {
@@ -7,10 +7,10 @@ describe('sort', () => {
   });
 
   it('should sort in asc order', () => {
-    expect(sort(Order.ASC)(collection('1,3,2'))).toEqual(collection('1,2,3'));
+    expect(sort(SortOrder.ASC)(collection('1,3,2'))).toEqual(collection('1,2,3'));
   });
 
   it('should sort in desc order', () => {
-    expect(sort(Order.DESC)(collection('1,3,2'))).toEqual(collection('3,2,1'));
+    expect(sort(SortOrder.DESC)(collection('1,3,2'))).toEqual(collection('3,2,1'));
   });
 });

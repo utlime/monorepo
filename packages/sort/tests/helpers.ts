@@ -1,8 +1,8 @@
-import { Weightable } from '../src';
+import { Sortable } from '../src';
 
-export function collection(weights: string): Weightable[] {
+export function collection(weights: string): Sortable[] {
   return weights
     .split(',')
     .map(Number)
-    .map(weight => ({ weight }));
+    .map(order => ({ order }));
 }
