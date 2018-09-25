@@ -1,8 +1,10 @@
 /**
  * Tag object to organise collections
+ *
+ * @todo add color interface
  */
 export interface Tag {
-  name: string;
+  tag: string;
   color: string;
 }
 
@@ -13,10 +15,10 @@ export function defaults(
   options: {
     color?: string;
   } = { color: '#FFF' }
-): (tag: { name: string; color?: string }) => Tag {
+): (tag: { tag: string; color?: string }) => Tag {
   return tag => ({
     color: tag.color || options.color || '#FFF',
-    name: tag.name,
+    tag: tag.tag,
   });
 }
 
@@ -25,12 +27,12 @@ export function defaults(
  */
 export function update(
   options: {
-    name?: string;
+    tag?: string;
     color?: string;
   } = {}
 ): (tag: Tag) => Tag {
   return tag => ({
     color: options.color || tag.color,
-    name: options.name || tag.name,
+    tag: options.tag || tag.tag,
   });
 }

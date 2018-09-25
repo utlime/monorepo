@@ -1,25 +1,25 @@
 import { update } from '../src';
 
 describe('tagUpdate', () => {
-  it('should update name field', () => {
-    expect(update({ name: 'tag2' })({ name: 'tag', color: '' })).toMatchObject({ name: 'tag2' });
+  it('should update tag field', () => {
+    expect(update({ tag: 'tag2' })({ tag: 'tag', color: '' })).toMatchObject({ tag: 'tag2' });
   });
 
   it('should update color field', () => {
-    expect(update({ color: 'true' })({ name: 'tag', color: 'false' })).toMatchObject({
+    expect(update({ color: 'true' })({ tag: 'tag', color: 'false' })).toMatchObject({
       color: 'true',
     });
   });
 
   it('should update only provided field', () => {
-    expect(update({ color: 'true' })({ name: 'tag', color: 'false' })).toMatchObject({
+    expect(update({ color: 'true' })({ tag: 'tag', color: 'false' })).toMatchObject({
       color: 'true',
-      name: 'tag',
+      tag: 'tag',
     });
   });
 
   it('should be new object', () => {
-    const tag = { name: 'tag', color: '' };
+    const tag = { tag: 'tag', color: '' };
 
     expect(update()(tag)).not.toBe(tag);
   });
