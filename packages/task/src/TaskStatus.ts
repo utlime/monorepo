@@ -6,8 +6,9 @@
  *  Standard flow: [ Blocked <-> ] NotStarted [ -> InProgress [ <-> Paused ] ] -> Completed or Canceled
  *  @todo create validation for status flow
  *  @todo add more detail for each status
+ *  @todo rename to TaskStatus
  */
-export enum Status {
+export enum TaskStatus {
   /**
    *  This indicates that the task has been blocked and can not be started.
    */

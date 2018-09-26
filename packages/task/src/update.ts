@@ -1,4 +1,4 @@
-import { Status } from './Status';
+import { TaskStatus } from './TaskStatus';
 import { Task } from './Task';
 
 /**
@@ -7,7 +7,7 @@ import { Task } from './Task';
 export function update(
   options: {
     task?: string;
-    status?: Status;
+    status?: TaskStatus;
   } = {}
 ): (task: Task) => Task {
   return task => ({

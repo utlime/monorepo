@@ -1,25 +1,25 @@
-import { Status, update } from '../src/index';
+import { TaskStatus, update } from '../src/index';
 
 describe('todoUpdate', () => {
   it('should update task field', () => {
-    expect(update({ task: 'todo2' })({ task: 'todo', status: Status.NotStarted })).toMatchObject({
+    expect(update({ task: 'todo2' })({ task: 'todo', status: TaskStatus.NotStarted })).toMatchObject({
       task: 'todo2',
     });
   });
 
   it('should update done field', () => {
-    expect(update({ status: Status.Completed })({ task: 'todo', status: Status.NotStarted })).toMatchObject({ status: Status.Completed });
+    expect(update({ status: TaskStatus.Completed })({ task: 'todo', status: TaskStatus.NotStarted })).toMatchObject({ status: TaskStatus.Completed });
   });
 
   it('should update only provided field', () => {
-    expect(update({ status: Status.Completed })({ task: 'todo', status: Status.NotStarted })).toMatchObject({
+    expect(update({ status: TaskStatus.Completed })({ task: 'todo', status: TaskStatus.NotStarted })).toMatchObject({
       task: 'todo',
-      status: Status.Completed,
+      status: TaskStatus.Completed,
     });
   });
 
   it('should be new object', () => {
-    const todo = { task: 'todo', status: Status.Completed };
+    const todo = { task: 'todo', status: TaskStatus.Completed };
 
     expect(update()(todo)).not.toBe(todo);
   });
