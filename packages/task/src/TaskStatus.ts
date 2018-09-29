@@ -6,7 +6,6 @@
  *  Standard flow: [ Blocked <-> ] NotStarted [ -> InProgress [ <-> Paused ] ] -> Completed or Canceled
  *  @todo create validation for status flow
  *  @todo add more detail for each status
- *  @todo rename to TaskStatus
  */
 export enum TaskStatus {
   /**
