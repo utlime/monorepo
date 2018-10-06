@@ -19,7 +19,7 @@ export function isNotInCollection(collection: Identity[]): (identity: Identity) 
 /**
  * Merge two collections of identities, without duplicates
  */
-export function mergeCollection(collection1: Identity[]): (collection2: Identity[]) => Identity[] {
+export function mergeCollection<T extends Identity>(collection1: T[]): (collection2: T[]) => T[] {
   const excludeDuplicates = excludeCollection(collection1);
   return collection2 => collection1.concat(excludeDuplicates(collection2));
 }
@@ -27,7 +27,7 @@ export function mergeCollection(collection1: Identity[]): (collection2: Identity
 /**
  * Return sub collection from collection2, exclude identities from collection1
  */
-export function excludeCollection(collection1: Identity[]): (collection2: Identity[]) => Identity[] {
+export function excludeCollection<T extends Identity>(collection1: T[]): (collection2: T[]) => T[] {
   const exclude = isNotInCollection(collection1);
   return collection2 => collection2.filter(exclude);
 }
