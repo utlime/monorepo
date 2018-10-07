@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/utlime/monorepo/tree/master/packages/identity/compare/@utlime/identity@0.2.0...@utlime/identity@0.3.0) (2018-10-07)
+
+
+### Features
+
+* **sort:** update/add Comparable and Comparator ([19f9435](https://github.com/utlime/monorepo/tree/master/packages/identity/commit/19f9435))
+
+
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2018-09-23)
 

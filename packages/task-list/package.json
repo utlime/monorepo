@@ -1,6 +1,6 @@
 {
   "name": "@utlime/task-list",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -26,16 +26,16 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@utlime/task": "^0.4.0",
-    "@utlime/sort": "^0.2.0",
-    "@utlime/identity": "^0.2.0",
-    "@utlime/tag": "^0.3.0"
+    "@utlime/identity": "^0.3.0",
+    "@utlime/sort": "^0.3.0",
+    "@utlime/tag": "^0.3.0",
+    "@utlime/task": "^0.5.0"
   },
   "peerDependencies": {
-    "@utlime/task": "^0.4.0",
-    "@utlime/sort": "^0.2.0",
     "@utlime/identity": "^0.2.0",
-    "@utlime/tag": "^0.3.0"
+    "@utlime/sort": "^0.2.0",
+    "@utlime/tag": "^0.3.0",
+    "@utlime/task": "^0.4.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.2",
