@@ -1,17 +1,9 @@
 {
+  "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "es5",
-    "module":"es2015",
-    "strict": true,
-    "sourceMap": true,
-    "declaration": true,
-    "esModuleInterop": true,
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "typeRoots": [
-      "../../node_modules/@types"
-    ],
+    "rootDir": "src",
     "baseUrl": "."
   },
   "include": [

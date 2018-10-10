@@ -1,0 +1,10 @@
+{
+  "exclude": ["packages"],
+  "references": [
+    { "path": "packages/identity" },
+    { "path": "packages/sort" },
+    { "path": "packages/tag" },
+    { "path": "packages/task" },
+    { "path": "packages/task-list" }
+  ]
+}

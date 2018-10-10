@@ -14,15 +14,18 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "install": "lerna bootstrap --hoist",
-    "build": "lerna run build",
+    "install1": "lerna bootstrap --hoist",
+    "build": "tsc -b && lerna run build",
     "test": "lerna run test",
     "publish": "lerna publish"
   },
   "devDependencies": {
     "commitizen": "^2.10.1",
     "cz-lerna-changelog": "^2.0.0",
-    "lerna": "^3.4.0"
+    "lerna": "^3.4.0",
+    "@types/jest": "^23.3.2",
+    "@types/lodash": "^4.14.116",
+    "typescript": "^3.1.2"
   },
   "config": {
     "commitizen": {
