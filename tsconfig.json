@@ -1,5 +1,8 @@
 {
-  "exclude": ["packages"],
+  "compilerOptions": {
+    "strict": true
+  },
+  "files": [],
   "references": [
     { "path": "packages/identity" },
     { "path": "packages/sort" },

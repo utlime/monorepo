@@ -18,37 +18,14 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.ts",
-    "test": "jest -c jest.json",
-    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prettier": "prettier --write {src,tests}/**/*.ts",
-    "precommit": "lint-staged"
+    "build": "rollup -c rollup.config.ts"
   },
   "gitHead": "2efdd07b3a0e8bf1fd08bf956f62851896c1cc77",
   "devDependencies": {
-    "jest": "^23.6.0",
-    "lint-staged": "^7.3.0",
-    "lodash": "^4.17.11",
-    "prettier": "^1.14.3",
     "rollup": "^0.66.2",
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-typescript2": "^0.17.0",
-    "ts-jest": "^23.10.1",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-config-standard": "^8.0.1"
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "lint-staged": {
-    "{src,tests}/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
+    "rollup-plugin-typescript2": "^0.17.0"
   }
 }

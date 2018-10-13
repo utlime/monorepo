@@ -8,7 +8,9 @@ describe('todoUpdate', () => {
   });
 
   it('should update done field', () => {
-    expect(update({ status: TaskStatus.Completed })({ task: 'todo', status: TaskStatus.NotStarted })).toMatchObject({ status: TaskStatus.Completed });
+    expect(update({ status: TaskStatus.Completed })({ task: 'todo', status: TaskStatus.NotStarted })).toMatchObject({
+      status: TaskStatus.Completed,
+    });
   });
 
   it('should update only provided field', () => {
