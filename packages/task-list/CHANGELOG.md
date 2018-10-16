@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/utlime/monorepo/tree/master/packages/task-list/compare/@utlime/task-list@0.2.0...@utlime/task-list@0.2.1) (2018-10-16)
+
+
+### Bug Fixes
+
+* **task-list:** peer dependencies version ([2a23167](https://github.com/utlime/monorepo/tree/master/packages/task-list/commit/2a23167))
+
+
+
+
+
 # [0.2.0](https://github.com/utlime/monorepo/tree/master/packages/task-list/compare/@utlime/task-list@0.1.1...@utlime/task-list@0.2.0) (2018-10-16)
 
 
