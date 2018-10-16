@@ -14,14 +14,14 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "bootstrap": "lerna bootstrap --hoist",
+    "prettier": "prettier --write packages/*/{src,tests}/**/*.ts",
+    "lint": "tslint --project tsconfig.json -t codeFrame 'packages/*/src/**/*.ts' 'packages/*/test/**/*.ts'",
+    "test": "jest -c jest.json --coverage",
     "build": "npm run build:rollup",
     "build:ts": "tsc -b",
     "build:rollup": "npx lerna exec --stream -- rollup -c=../../rollup.config.ts",
-    "test": "jest -c jest.json --coverage",
-    "lint": "tslint --project tsconfig.json -t codeFrame 'packages/*/src/**/*.ts' 'packages/*/test/**/*.ts'",
-    "prettier": "prettier --write packages/*/{src,tests}/**/*.ts",
-    "publish": "lerna publish",
+    "bootstrap": "lerna bootstrap --hoist",
+    "publish": "npm run test && npm run build && lerna publish",
     "precommit1": "lint-staged"
   },
   "devDependencies": {
