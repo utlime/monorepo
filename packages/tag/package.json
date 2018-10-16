@@ -6,7 +6,7 @@
   },
   "description": "Tag interface",
   "main": "dist/index.umd.js",
-  "unpkg": "dist/index.iife.js",
+  "unpkg": "dist/index.iife.min.js",
   "module": "dist/index.es5.js",
   "typings": "dist/types/index.d.ts",
   "keywords": [

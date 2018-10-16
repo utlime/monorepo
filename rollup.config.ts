@@ -1,6 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import sourceMaps from 'rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
 import { uglify } from 'rollup-plugin-uglify';
 import clear from 'rollup-plugin-clear'
@@ -17,28 +16,29 @@ const globals = Object.keys(pkg.peerDependencies || {}).reduce((acc, cur) => ({ 
 export default [
   {
     output: [
-      { file: pkg.main, format: 'umd', sourcemap: true, name: nameBuilder(pkg.name), globals },
-      { file: pkg.module, format: 'es', sourcemap: true, name: nameBuilder(pkg.name), globals },
-    ],
-    plugins: [
-      sourceMaps(),
+      { file: pkg.main, format: 'umd' },
+      { file: pkg.module, format: 'es' },
+      { file: pkg.unpkg.replace('.min', ''), format: 'iife' },
     ],
   },
   {
     output: [
-      { file: pkg.unpkg, format: 'iife', sourcemap: true, name: nameBuilder(pkg.name), globals },
+      { file: pkg.unpkg, format: 'iife' },
     ],
     plugins: [
       uglify(),
     ],
   },
-].map(({ output, plugins }) => {
+].map(({ output, plugins = [] }) => {
   return {
     input: path.join(ROOT, 'src/index.ts'),
     external: Object.keys(globals),
-    output: output.map((out) => ({
-      ...out,
-      file: path.join(ROOT, out.file)
+    output: output.map(({ file, format }) => ({
+      file: path.join(ROOT, file),
+      format,
+      sourcemap: true,
+      name: nameBuilder(pkg.name),
+      globals,
     })),
     plugins: [
       clear({ targets: [path.join(ROOT, 'dist')] }),

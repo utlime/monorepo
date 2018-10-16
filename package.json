@@ -15,10 +15,10 @@
   "scripts": {
     "commit": "git-cz",
     "bootstrap": "lerna bootstrap --hoist",
-    "build": "npm run build:ts && npm run build:rollup",
+    "build": "npm run build:rollup",
     "build:ts": "tsc -b",
     "build:rollup": "npx lerna exec --stream -- rollup -c=../../rollup.config.ts",
-    "test": "jest -c jest.json",
+    "test": "jest -c jest.json --coverage",
     "lint": "tslint --project tsconfig.json -t codeFrame 'packages/*/src/**/*.ts' 'packages/*/test/**/*.ts'",
     "prettier": "prettier --write packages/*/{src,tests}/**/*.ts",
     "publish": "lerna publish",
