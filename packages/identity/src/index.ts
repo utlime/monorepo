@@ -44,3 +44,10 @@ export function containCollection(
 
   return collection => identities => collection.filter(isInCollection(identities)).length === collection.length;
 }
+
+/**
+ * Return Identity object
+ */
+export function tidy<T extends Identity>({ id }: T): Identity {
+  return { id };
+}
