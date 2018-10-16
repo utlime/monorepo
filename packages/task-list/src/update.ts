@@ -1,5 +1,5 @@
+import { tidy } from '@utlime/identity';
 import { update as updateTask, TaskStatus } from '@utlime/task';
-import { cleanIdentity } from './cleanIdentity';
 import { ListTask } from './ListTask';
 
 export function update(
@@ -14,6 +14,6 @@ export function update(
     id: options.id || listTask.id,
     ...updateTask(options)(listTask),
     weight: options.weight !== undefined ? options.weight : listTask.weight,
-    tags: listTask.tags.map(cleanIdentity),
+    tags: listTask.tags.map(tidy),
   });
 }

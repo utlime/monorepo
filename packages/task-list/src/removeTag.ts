@@ -1,9 +1,8 @@
-import { Identity, excludeCollection } from '@utlime/identity';
-import { cleanIdentity } from './cleanIdentity';
+import { Identity, excludeCollection, tidy } from '@utlime/identity';
 import { ListTask } from './ListTask';
 
 export function removeTag(tags: Identity[]): (listTask: ListTask) => ListTask {
-  const exclude = excludeCollection(tags.map(cleanIdentity));
+  const exclude = excludeCollection(tags.map(tidy));
 
   return listTask => ({
     id: listTask.id,
