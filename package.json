@@ -36,6 +36,7 @@
     "lodash": "^4.17.11",
     "prettier": "^1.14.3",
     "rollup": "^0.66.2",
+    "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
