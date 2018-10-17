@@ -12,7 +12,7 @@ const defaults: StatusWeight = {
   [TaskStatus.Canceled]: { weight: 4 },
 };
 
-export function comporatorByStatus(statuses: StatusWeight = defaults): (a: Task, b: Task) => number {
+export function comparatorByStatus(statuses: StatusWeight = defaults): (a: Task, b: Task) => number {
   const cmp = sortComparator(SortOrder.ASC);
 
   return (a, b) => cmp(statuses[a.status], statuses[b.status]);

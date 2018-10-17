@@ -1,10 +1,10 @@
 import { TaskStatus } from '@utlime/task';
-import { comporatorByStatus } from '../src';
+import { comparatorByStatus } from '../src';
 
 describe('comparatorByStatus', () => {
   it('should compare by default statuses', () => {
     expect(
-      comporatorByStatus()(
+      comparatorByStatus()(
         { status: TaskStatus.Blocked, task: 'task1' },
         { status: TaskStatus.InProgress, task: 'task2' }
       )
@@ -12,7 +12,7 @@ describe('comparatorByStatus', () => {
   });
   it('should compare by provided statuses', () => {
     expect(
-      comporatorByStatus({
+      comparatorByStatus({
         [TaskStatus.InProgress]: { weight: 99 },
         [TaskStatus.Paused]: { weight: 1 },
         [TaskStatus.NotStarted]: { weight: 2 },

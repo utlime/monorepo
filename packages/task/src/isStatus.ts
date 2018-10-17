@@ -2,8 +2,8 @@ import { TaskStatus } from './TaskStatus';
 import { Task } from './Task';
 
 /**
- * Return boolean value if task status is equal to done
+ * Return boolean value if task status in statuses
  */
-export function isStatus(status: TaskStatus): (task: Task) => boolean {
-  return task => task.status === status;
+export function isStatus(statuses: TaskStatus[]): (task: Task) => boolean {
+  return task => statuses.indexOf(task.status) !== -1;
 }
