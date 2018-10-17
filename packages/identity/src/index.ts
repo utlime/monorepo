@@ -51,3 +51,26 @@ export function containCollection(
 export function tidy<T extends Identity>({ id }: T): Identity {
   return { id };
 }
+
+/**
+ * Return random string
+ */
+function generateId(): string {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+/**
+ * Return new identity
+ */
+export function create<T extends Identity>(generator: () => string = generateId): (collection?: T[]) => Identity {
+  return (collection = []) => {
+    let identity: Identity;
+    const exists = isInCollection(collection);
+
+    do {
+      identity = { id: generator() };
+    } while (exists(identity));
+
+    return identity;
+  }
+}
