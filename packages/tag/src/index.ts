@@ -4,8 +4,8 @@
  * @todo add color interface
  */
 export interface Tag {
-  tag: string;
-  color: string;
+  readonly tag: string;
+  readonly color: string;
 }
 
 /**

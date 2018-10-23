@@ -1,4 +1,3 @@
-import { tidy } from '@utlime/identity';
 import { update as updateTask, TaskStatus } from '@utlime/task';
 import { ListTask } from './ListTask';
 
@@ -14,6 +13,6 @@ export function update(
     id: options.id || listTask.id,
     ...updateTask(options)(listTask),
     weight: options.weight !== undefined ? options.weight : listTask.weight,
-    tags: listTask.tags.map(tidy),
+    tags: listTask.tags,
   });
 }

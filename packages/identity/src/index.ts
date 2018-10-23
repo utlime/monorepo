@@ -1,25 +1,25 @@
 export interface Identity {
-  id: string;
+  readonly id: string;
 }
 
 /**
  * Check is collection contain identity
  */
-export function isInCollection(collection: Identity[]): (identity: Identity) => boolean {
+export function isInCollection(collection: ReadonlyArray<Identity>): (identity: Identity) => boolean {
   return identity => collection.some(({ id }) => id === identity.id);
 }
 
 /**
  * Check is collection not contain identity
  */
-export function isNotInCollection(collection: Identity[]): (identity: Identity) => boolean {
+export function isNotInCollection(collection: ReadonlyArray<Identity>): (identity: Identity) => boolean {
   return identity => !collection.some(({ id }) => id === identity.id);
 }
 
 /**
  * Merge two collections of identities, without duplicates
  */
-export function mergeCollection<T extends Identity>(collection1: T[]): (collection2: T[]) => T[] {
+export function mergeCollection<T extends Identity>(collection1: ReadonlyArray<T>): (collection2: ReadonlyArray<T>) => T[] {
   const excludeDuplicates = excludeCollection(collection1);
   return collection2 => collection1.concat(excludeDuplicates(collection2));
 }
@@ -27,7 +27,7 @@ export function mergeCollection<T extends Identity>(collection1: T[]): (collecti
 /**
  * Return sub collection from collection2, exclude identities from collection1
  */
-export function excludeCollection<T extends Identity>(collection1: T[]): (collection2: T[]) => T[] {
+export function excludeCollection<T extends Identity>(collection1: ReadonlyArray<T>): (collection2: ReadonlyArray<T>) => T[] {
   const exclude = isNotInCollection(collection1);
   return collection2 => collection2.filter(exclude);
 }
@@ -37,7 +37,7 @@ export function excludeCollection<T extends Identity>(collection1: T[]): (collec
  */
 export function containCollection(
   atLeastOne: boolean = true
-): (collection: Identity[]) => (identities: Identity[]) => boolean {
+): (collection: ReadonlyArray<Identity>) => (identities: ReadonlyArray<Identity>) => boolean {
   if (atLeastOne) {
     return collection => identities => identities.some(isInCollection(collection));
   }
@@ -62,7 +62,7 @@ function generateId(): string {
 /**
  * Return new identity
  */
-export function create<T extends Identity>(generator: () => string = generateId): (collection?: T[]) => Identity {
+export function create<T extends Identity>(generator: () => string = generateId): (collection?: ReadonlyArray<T>) => Identity {
   return (collection = []) => {
     let identity: Identity;
     const exists = isInCollection(collection);

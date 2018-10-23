@@ -2,7 +2,7 @@
  * Object which has weight
  */
 export interface Comparable {
-  weight: number;
+  readonly weight: number;
 }
 
 /**
@@ -28,21 +28,21 @@ export function comparator(order: SortOrder = SortOrder.ASC): Comparator {
 /**
  * Sort given collection
  */
-export function sort(cmp: Comparator): <T extends Comparable>(items: T[]) => T[] {
-  return items => items.sort(cmp);
+export function sort(cmp: Comparator): <T extends Comparable>(items: ReadonlyArray<T>) => ReadonlyArray<T> {
+  return items => [...items].sort(cmp);
 }
 
 /**
  * Return first item after sorting
  */
-export function first(cmp: Comparator): <T extends Comparable>(items: T[]) => T | null {
-  return <T extends Comparable>(items: T[]) =>
+export function first(cmp: Comparator): <T extends Comparable>(items: ReadonlyArray<T>) => T | null {
+  return <T extends Comparable>(items: ReadonlyArray<T>) =>
     items.reduce((prev: T | null, cur: T) => (prev === null || cmp(prev, cur) > 0 ? cur : prev), null);
 }
 
 /**
  * Return weight of collection
  */
-export function total(items: Comparable[]): number {
+export function total(items: ReadonlyArray<Comparable>): number {
   return items.reduce((total, cur) => total + cur.weight, 0);
 }

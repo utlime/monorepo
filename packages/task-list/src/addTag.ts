@@ -1,8 +1,8 @@
-import { Identity, mergeCollection, tidy } from '@utlime/identity';
+import { Identity, mergeCollection } from '@utlime/identity';
 import { ListTask } from './ListTask';
 
-export function addTag(tags: Identity[]): (listTask: ListTask) => ListTask {
-  const merge = mergeCollection(tags.map(tidy));
+export function addTag(tags: ReadonlyArray<Identity>): (listTask: ListTask) => ListTask {
+  const merge = mergeCollection(tags);
 
   return listTask => ({
     id: listTask.id,
