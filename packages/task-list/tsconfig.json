@@ -6,5 +6,11 @@
     "rootDir": "src",
     "baseUrl": "."
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [
+    { "path": "../identity" },
+    { "path": "../sort" },
+    { "path": "../tag" },
+    { "path": "../task" }
+  ]
 }
