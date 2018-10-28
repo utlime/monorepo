@@ -8,7 +8,8 @@ describe('create', () => {
     expect(create(() => '1')().id).toBe('1');
   });
   it('should call generator twice if id already exists', () => {
-    const generator = jest.fn()
+    const generator = jest
+      .fn()
       .mockReturnValueOnce('1')
       .mockReturnValueOnce('1')
       .mockReturnValueOnce('2');

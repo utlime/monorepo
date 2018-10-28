@@ -1,14 +1,9 @@
-import { Identity, excludeCollection, tidy } from '@utlime/identity';
+import { Identity, excludeCollection } from '@utlime/identity';
 import { ListTask } from './ListTask';
+import { update } from './update';
 
 export function removeTag(tags: ReadonlyArray<Identity>): (listTask: ListTask) => ListTask {
   const exclude = excludeCollection(tags);
 
-  return listTask => ({
-    id: listTask.id,
-    status: listTask.status,
-    task: listTask.task,
-    weight: listTask.weight,
-    tags: exclude(listTask.tags),
-  });
+  return listTask => update({ tags: exclude(listTask.tags) })(listTask);
 }

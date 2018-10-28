@@ -19,7 +19,9 @@ export function isNotInCollection(collection: ReadonlyArray<Identity>): (identit
 /**
  * Merge two collections of identities, without duplicates
  */
-export function mergeCollection<T extends Identity>(collection1: ReadonlyArray<T>): (collection2: ReadonlyArray<T>) => T[] {
+export function mergeCollection<T extends Identity>(
+  collection1: ReadonlyArray<T>
+): (collection2: ReadonlyArray<T>) => T[] {
   const excludeDuplicates = excludeCollection(collection1);
   return collection2 => collection1.concat(excludeDuplicates(collection2));
 }
@@ -27,7 +29,9 @@ export function mergeCollection<T extends Identity>(collection1: ReadonlyArray<T
 /**
  * Return sub collection from collection2, exclude identities from collection1
  */
-export function excludeCollection<T extends Identity>(collection1: ReadonlyArray<T>): (collection2: ReadonlyArray<T>) => T[] {
+export function excludeCollection<T extends Identity>(
+  collection1: ReadonlyArray<T>
+): (collection2: ReadonlyArray<T>) => T[] {
   const exclude = isNotInCollection(collection1);
   return collection2 => collection2.filter(exclude);
 }
@@ -56,13 +60,17 @@ export function tidy<T extends Identity>({ id }: T): Identity {
  * Return random string
  */
 function generateId(): string {
-  return Math.random().toString(36).substr(2, 9);
+  return Math.random()
+    .toString(36)
+    .substr(2, 9);
 }
 
 /**
  * Return new identity
  */
-export function create<T extends Identity>(generator: () => string = generateId): (collection?: ReadonlyArray<T>) => Identity {
+export function create<T extends Identity>(
+  generator: () => string = generateId
+): (collection?: ReadonlyArray<T>) => Identity {
   return (collection = []) => {
     let identity: Identity;
     const exists = isInCollection(collection);
@@ -72,5 +80,5 @@ export function create<T extends Identity>(generator: () => string = generateId)
     } while (exists(identity));
 
     return identity;
-  }
+  };
 }

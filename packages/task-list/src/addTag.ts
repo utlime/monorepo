@@ -1,14 +1,9 @@
 import { Identity, mergeCollection } from '@utlime/identity';
 import { ListTask } from './ListTask';
+import { update } from './update';
 
 export function addTag(tags: ReadonlyArray<Identity>): (listTask: ListTask) => ListTask {
   const merge = mergeCollection(tags);
 
-  return listTask => ({
-    id: listTask.id,
-    status: listTask.status,
-    task: listTask.task,
-    weight: listTask.weight,
-    tags: merge(listTask.tags),
-  });
+  return listTask => update({ tags: merge(listTask.tags) })(listTask);
 }

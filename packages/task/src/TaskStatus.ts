@@ -4,8 +4,7 @@
  *  It represents the life cycle of tasks, e.g. when task was created, it will in NotStarted status
  *
  *  Standard flow: [ Blocked <-> ] NotStarted [ -> InProgress [ <-> Paused ] ] -> Completed or Canceled
- *  @todo create validation for status flow
- *  @todo add more detail for each status
+ *  @todo refactor this, because it is not flexible. Need to implement way to extend statuses
  */
 export enum TaskStatus {
   /**
