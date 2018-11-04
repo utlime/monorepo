@@ -16,7 +16,7 @@ export function create(options: { weight: number }): Comparable {
  * Return new compatible object
  */
 export function update(options: { weight?: number } = {}): (comparable: Comparable) => Comparable {
-  return comparable => ({
+  return comparable => create({
     weight: options.weight || comparable.weight,
   });
 }
