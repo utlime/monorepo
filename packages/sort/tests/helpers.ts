@@ -1,6 +1,6 @@
-import { Comparable } from '../src';
+import { Collection } from '../src';
 
-export function collection(weights: string): Comparable[] {
+export function collection(weights: string): Collection {
   return weights
     .split(',')
     .map(Number)
