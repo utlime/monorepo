@@ -21,9 +21,10 @@ export function create(options: { tag: string; color?: string }): Tag {
 /**
  * Create new tag with option
  */
-export function update(options: { tag?: string; color?: string } = {}): (tag: Tag) => Tag {
-  return tag => create({
-    color: options.color || tag.color,
-    tag: options.tag || tag.tag,
-  });
+export function update(options: Partial<Tag> = {}): (tag: Tag) => Tag {
+  return tag =>
+    create({
+      color: options.color || tag.color,
+      tag: options.tag || tag.tag,
+    });
 }

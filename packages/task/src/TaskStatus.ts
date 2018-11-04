@@ -6,7 +6,7 @@
  *  Standard flow: [ Blocked <-> ] NotStarted [ -> InProgress [ <-> Paused ] ] -> Completed or Canceled
  *  @todo refactor this, because it is not flexible. Need to implement way to extend statuses
  */
-export enum TaskStatus {
+export const enum TaskStatus {
   /**
    *  This indicates that the task has been blocked and can not be started.
    */
