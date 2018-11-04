@@ -15,10 +15,11 @@ export function create(options: { weight: number }): Comparable {
 /**
  * Return new compatible object
  */
-export function update(options: { weight?: number } = {}): (comparable: Comparable) => Comparable {
-  return comparable => create({
-    weight: options.weight || comparable.weight,
-  });
+export function update(options: Partial<Comparable> = {}): (comparable: Comparable) => Comparable {
+  return comparable =>
+    create({
+      weight: options.weight || comparable.weight,
+    });
 }
 
 /**
