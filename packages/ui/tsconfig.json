@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "declarationDir": "dist/types",
+    "outDir": "dist/lib",
+    "rootDir": "src",
+    "baseUrl": "."
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../identity" },
+    { "path": "../sort" },
+    { "path": "../tag" },
+    { "path": "../task" }
+  ]
+}

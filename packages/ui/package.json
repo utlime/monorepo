@@ -1,0 +1,39 @@
+{
+  "name": "@utlime/ui",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "UI tasks list",
+  "main": "dist/index.umd.js",
+  "unpkg": "dist/index.iife.min.js",
+  "module": "dist/index.es5.js",
+  "typings": "dist/types/index.d.ts",
+  "keywords": [
+    "task"
+  ],
+  "author": "Alex Vysotsky <utlime@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utlime/monorepo/tree/master/packages/ui"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "react": "next",
+    "react-dom": "next",
+    "@utlime/identity": "^0.4.0",
+    "@utlime/sort": "^0.3.2",
+    "@utlime/tag": "^0.3.2",
+    "@utlime/task": "^0.5.2"
+  },
+  "peerDependencies": {
+    "react": "next",
+    "react-dom": "next",
+    "@utlime/identity": "^0.4.0",
+    "@utlime/sort": "^0.3.0",
+    "@utlime/tag": "^0.3.0",
+    "@utlime/task": "^0.5.0"
+  }
+}

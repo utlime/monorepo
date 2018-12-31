@@ -6,15 +6,15 @@ export interface ListTag {
   readonly tag: Tag;
 }
 
-export function create(options: ListTag): ListTag {
+export function createListTag(options: ListTag): ListTag {
   return ({
     identity: options.identity,
     tag: options.tag,
   })
 }
 
-export function update(options: Partial<ListTag>): (listTag: ListTag) => ListTag {
-  return listTag => create({
+export function updateListTag(options: Partial<ListTag> = {}): (listTag: ListTag) => ListTag {
+  return listTag => createListTag({
     identity: options.identity || listTag.identity,
     tag: options.tag || listTag.tag,
   })
