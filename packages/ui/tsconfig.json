@@ -4,10 +4,10 @@
     "jsx": "react",
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "rootDir": "src",
+    "rootDirs": ["src", "stories"],
     "baseUrl": "."
   },
-  "include": ["src"],
+  "include": ["src", "stories"],
   "references": [
     { "path": "../identity" },
     { "path": "../sort" },

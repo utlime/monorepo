@@ -33,12 +33,13 @@ export function create(options: {
  * Update and return new list task
  */
 export function update(options: Partial<ListTask> = {}): (listTask: ListTask) => ListTask {
-  return listTask => create({
-    task: options.task || listTask.task,
-    identity: options.identity || listTask.identity,
-    comparable: options.comparable || listTask.comparable,
-    tags: options.tags || listTask.tags,
-  });
+  return listTask =>
+    create({
+      task: options.task || listTask.task,
+      identity: options.identity || listTask.identity,
+      comparable: options.comparable || listTask.comparable,
+      tags: options.tags || listTask.tags,
+    });
 }
 
 /**
@@ -50,10 +51,12 @@ export function updateKey<K extends keyof ListTask>(
   return func => listTask => update({ [key]: func(listTask[key]) })(listTask);
 }
 
-export function updateByIdentity(identity: Identity): (updater: ((update: ListTask) => ListTask)) => (listTask: ListTask) => ListTask {
+export function updateByIdentity(
+  identity: Identity
+): (updater: ((update: ListTask) => ListTask)) => (listTask: ListTask) => ListTask {
   const is = isEqual(identity);
 
-  return updater => listTask => is(listTask.identity) ? updater(listTask) : listTask;
+  return updater => listTask => (is(listTask.identity) ? updater(listTask) : listTask);
 }
 
 /**
@@ -66,8 +69,7 @@ export function mapKey<K extends keyof ListTask, U>(
 }
 
 export function sortByKey(comparator: Comparator): (listTasks: ReadonlyArray<ListTask>) => ReadonlyArray<ListTask> {
-  return (listTasks) => {
-    return [...listTasks].sort((a, b) => comparator(a.comparable, b.comparable))
+  return listTasks => {
+    return [...listTasks].sort((a, b) => comparator(a.comparable, b.comparable));
   };
 }
-

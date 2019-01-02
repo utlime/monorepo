@@ -7,15 +7,16 @@ export interface ListTag {
 }
 
 export function createListTag(options: ListTag): ListTag {
-  return ({
+  return {
     identity: options.identity,
     tag: options.tag,
-  })
+  };
 }
 
 export function updateListTag(options: Partial<ListTag> = {}): (listTag: ListTag) => ListTag {
-  return listTag => createListTag({
-    identity: options.identity || listTag.identity,
-    tag: options.tag || listTag.tag,
-  })
+  return listTag =>
+    createListTag({
+      identity: options.identity || listTag.identity,
+      tag: options.tag || listTag.tag,
+    });
 }

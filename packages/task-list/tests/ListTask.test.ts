@@ -48,8 +48,8 @@ describe('ListTask', () => {
 
       expect(
         update({ identity, task, comparable, tags })(
-          create({ identity: identity2, task: task2, comparable: comparable2, tags: tags2 }),
-        ),
+          create({ identity: identity2, task: task2, comparable: comparable2, tags: tags2 })
+        )
       ).toEqual({ identity, task, comparable, tags } as ListTask);
     });
   });
@@ -62,7 +62,7 @@ describe('ListTask', () => {
       const listTask = create({ identity, task, comparable, tags });
 
       expect(updateKey('task')(updateTask({ task: 'task2' }))(listTask)).toEqual(
-        update({ task: updateTask({ task: 'task2' })(task) })(listTask),
+        update({ task: updateTask({ task: 'task2' })(task) })(listTask)
       );
     });
   });
@@ -92,8 +92,7 @@ describe('ListTask', () => {
         create({ identity, task, comparable: comparable3, tags }),
       ];
 
-      expect(sortByKey(comparator())(listTasks))
-        .toEqual([listTasks[2], listTasks[1], listTasks[0], listTasks[3]]);
+      expect(sortByKey(comparator())(listTasks)).toEqual([listTasks[2], listTasks[1], listTasks[0], listTasks[3]]);
     });
   });
   describe('updateByIdentity', () => {

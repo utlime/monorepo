@@ -24,8 +24,10 @@ describe('ListTag', () => {
       const identity2 = createIdentity({ id: '2' });
       const tag2 = createTag({ tag: 'tag2' });
 
-      expect(updateListTag({ identity, tag })(createListTag({ identity: identity2, tag: tag2 })))
-        .toEqual({ identity, tag } as ListTag);
+      expect(updateListTag({ identity, tag })(createListTag({ identity: identity2, tag: tag2 }))).toEqual({
+        identity,
+        tag,
+      } as ListTag);
     });
   });
 });
