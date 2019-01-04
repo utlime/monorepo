@@ -1,11 +1,24 @@
 import { storiesOf } from '@storybook/react';
-import { TaskList, TaskListItem } from './TaskList';
+import { Task } from './Task';
+import { TaskList } from './TaskList';
 import React from 'react';
+import { TaskStatus } from './TaskStatus';
 
-storiesOf('TaskList', module).add('default', () => (
-  <TaskList>
-    {[1, 2, 3].map(i => (
-      <TaskListItem key={i}>{`task item ${i}`}</TaskListItem>
-    ))}
-  </TaskList>
-));
+const tasks = [
+  { id: '1', task: 'task 1', done: false },
+  { id: '2', task: 'task 2', done: true },
+  { id: '3', task: 'task 3', done: false },
+];
+
+storiesOf('TaskList', module)
+  .add('default', () => <TaskList tasks={tasks} />)
+  .add('custom', () => (
+    <TaskList tasks={tasks}>
+      {task => (
+        <React.Fragment>
+          <TaskStatus done={task.done} />
+          <Task task={task.task} />
+        </React.Fragment>
+      )}
+    </TaskList>
+  ));

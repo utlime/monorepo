@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type TaskStatusProps = {
+interface TaskStatusProps {
   done: boolean;
-  onClick?: () => void;
-};
+}
 
 const TaskStatusStyle = styled.span`
   color: ${(props: TaskStatusProps) => (!props.done ? 'grey' : 'inherit')};
@@ -15,10 +14,6 @@ const TaskStatusStyle = styled.span`
   }
 `;
 
-export function TaskStatus(props: TaskStatusProps) {
-  return (
-    <TaskStatusStyle {...props} onClick={props.onClick}>
-      {props.done ? '☑︎' : '☐'}
-    </TaskStatusStyle>
-  );
+export function TaskStatus<T extends TaskStatusProps>(props: T) {
+  return <TaskStatusStyle {...props}>{props.done ? '☑︎' : '☐'}</TaskStatusStyle>;
 }

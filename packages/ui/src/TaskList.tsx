@@ -1,12 +1,19 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-type TaskListProps = {
-  children: ReactNode;
-};
+interface Task {
+  id: string;
+  task: string;
+  done: boolean;
+}
 
-type TaskListItemProps = {
-  children: ReactNode;
+interface TaskListProps {
+  children?: (task: Task) => ReactNode;
+  tasks: Task[];
+}
+
+const defaultProps: Required<Pick<TaskListProps, 'children'>> = {
+  children: task => `${task.task} (${task.done ? 'done' : 'not done'})`,
 };
 
 const TaskListStyle = styled.ul`
@@ -23,10 +30,14 @@ const TaskListItemStyle = styled.li`
   }
 `;
 
-export function TaskList(props: TaskListProps) {
-  return <TaskListStyle>{props.children}</TaskListStyle>;
-}
+export function TaskList<T extends TaskListProps>(props: T) {
+  const { children = defaultProps.children, tasks } = props;
 
-export function TaskListItem(props: TaskListItemProps) {
-  return <TaskListItemStyle>{props.children}</TaskListItemStyle>;
+  return (
+    <TaskListStyle>
+      {tasks.map(task => (
+        <TaskListItemStyle key={task.id}>{children(task)}</TaskListItemStyle>
+      ))}
+    </TaskListStyle>
+  );
 }

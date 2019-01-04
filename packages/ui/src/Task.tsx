@@ -1,5 +1,11 @@
 import React from 'react';
 
-export function Task(props: { task: string }) {
-  return <span>{props.task}</span>;
+interface TaskProps {
+  task: string;
+}
+
+export function Task<T extends TaskProps>(props: T) {
+  const { task, ...rest } = props;
+
+  return <span {...rest}>{task}</span>;
 }
