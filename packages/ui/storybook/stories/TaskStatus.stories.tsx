@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { TaskStatus } from '../src';
+import { TaskStatus } from '../../src';
 
 storiesOf('TaskStatus', module)
   .add('done', () => <TaskStatus done={true} />)

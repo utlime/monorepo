@@ -1,8 +1,6 @@
 import { storiesOf } from '@storybook/react';
-import { Task } from './Task';
-import { TaskList } from './TaskList';
+import { Task, TaskList, TaskStatus } from '../../src';
 import React from 'react';
-import { TaskStatus } from './TaskStatus';
 
 const tasks = [
   { id: '1', task: 'task 1', done: false },

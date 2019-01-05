@@ -13,7 +13,7 @@
     "task"
   ],
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c storybook"
   },
   "author": "Alex Vysotsky <utlime@gmail.com>",
   "repository": {

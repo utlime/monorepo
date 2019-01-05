@@ -4,14 +4,8 @@
     "jsx": "react",
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "rootDirs": ["src", "stories"],
+    "rootDirs": ["src", "storybook/stories"],
     "baseUrl": "."
   },
-  "include": ["src", "stories"],
-  "references": [
-    { "path": "../identity" },
-    { "path": "../sort" },
-    { "path": "../tag" },
-    { "path": "../task" }
-  ]
+  "include": ["src", "storybook/stories"]
 }
