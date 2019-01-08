@@ -4,8 +4,8 @@
     "jsx": "react",
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "rootDir": "src",
+    "rootDirs": ["src", "storybook/stories"],
     "baseUrl": "."
   },
-  "include": ["src"]
+  "include": ["src", "storybook/stories"]
 }
