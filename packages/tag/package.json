@@ -12,10 +12,16 @@
   "keywords": [
     "tag"
   ],
+  "scripts": {
+    "build": "rollup -c=../../rollup.config.ts"
+  },
   "author": "Alex Vysotsky <utlime@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/utlime/monorepo/tree/master/packages/tag"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.66.6"
+  }
 }

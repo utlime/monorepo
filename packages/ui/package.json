@@ -13,7 +13,8 @@
     "task"
   ],
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c storybook"
+    "storybook": "start-storybook -p 9001 -c storybook",
+    "build": "rollup -c=../../rollup.config.ts"
   },
   "author": "Alex Vysotsky <utlime@gmail.com>",
   "repository": {
@@ -26,6 +27,7 @@
     "@types/react-dom": "^16.0.11",
     "@types/storybook__react": "^4.0.0",
     "@types/styled-components": "^4.1.4",
+    "rollup": "^0.66.6",
     "react": "next",
     "react-dom": "next",
     "@storybook/react": "^4.1.4",
