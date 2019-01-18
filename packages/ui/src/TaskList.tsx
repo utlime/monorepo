@@ -1,15 +1,16 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-interface Task {
+export interface TaskListTask {
   id: string;
   task: string;
   done: boolean;
+  edit: boolean;
 }
 
 interface TaskListProps {
-  children?: (task: Task) => ReactNode;
-  tasks: Task[];
+  children?: (task: TaskListTask) => ReactNode;
+  tasks: TaskListTask[];
 }
 
 const defaultProps: Required<Pick<TaskListProps, 'children'>> = {
