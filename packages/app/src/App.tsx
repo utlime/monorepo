@@ -48,6 +48,7 @@ const reducer = (state: TaskListTask[], action: { type: Type; task?: Partial<Tas
 };
 
 const App = () => {
+  // @ts-ignore
   const [tasks, dispatch] = useReducer(reducer, [], { type: Type.INIT });
 
   return (
